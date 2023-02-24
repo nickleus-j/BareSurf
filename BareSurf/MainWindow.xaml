@@ -28,10 +28,10 @@
             </Grid.ColumnDefinitions>
             <Button Content="Back" Command="{Binding WebBrowser.BackCommand, ElementName=Browser}" Width="50" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="#FF707070" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Button Content="Forward" Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="Gray" BorderThickness="1" FontFamily="Consolas">
+            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="Gray" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
 
             </TextBox>
-            <Button Content="Browse→" Command="{Binding LoadPageExecute}" Grid.Column="3"/>
+            <Button x:Name="BrowseButton" Content="Browse→" Command="{Binding LoadPageExecute}" Grid.Column="3"/>
             <CheckBox IsChecked="{Binding SelectedBrowser.urlValidity,Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center" IsEnabled="False">
                 <Label FontSize="8" FontFamily="Segoe UI Light" HorizontalAlignment="Left">valid</Label>
             </CheckBox>
