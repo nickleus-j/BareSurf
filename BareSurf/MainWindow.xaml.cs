@@ -25,7 +25,7 @@ namespace BareSurf
         public MainWindow()
         {
             Model = new MainVM();
-            Model.SelectedBrowser.WebAddress = "https://github.com/";
+            Model.SelectedBrowser.WebAddress = "https://www.duckduckgo.com/";
             this.DataContext = Model;
             InitializeComponent();
 
