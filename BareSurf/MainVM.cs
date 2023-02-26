@@ -11,11 +11,13 @@ namespace BareSurf
     {
         public int SelectedIndex { get; set; }
         public IList<BrowserVM> Browsers { get; set; }
+        public bool ShowBottomStatusBar { get; set; }
         public BrowserVM SelectedBrowser => Browsers?.ElementAt(SelectedIndex)?? new BrowserVM() { WebAddress = "https://duckduckgo.com/" };
         public MainVM()
         {
             Browsers=new List<BrowserVM>();
             SelectedIndex = 0;
+            ShowBottomStatusBar = true;
             Browsers.Add(new BrowserVM() { WebAddress= "https://duckduckgo.com/" });
         }
     }

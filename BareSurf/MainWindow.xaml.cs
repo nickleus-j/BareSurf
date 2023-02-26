@@ -44,5 +44,11 @@ namespace BareSurf
         {
             OnKeyDownHandler(sender, e);
         }
+
+        private void ToggleStatusBar(object sender, RoutedEventArgs e)
+        {
+            Model.ShowBottomStatusBar = !Model.ShowBottomStatusBar;
+            BottomStatusBar.Visibility = Model.ShowBottomStatusBar ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
