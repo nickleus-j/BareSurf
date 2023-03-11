@@ -6,6 +6,9 @@
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         Title="{Binding Path=Title, ElementName=Browser}"
         FocusManager.FocusedElement="{Binding ElementName=Browser}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="BrowsePage" Executed="BrowseCommand_Executed" CanExecute="BrowseCommand_CanExecute" />
+    </Window.CommandBindings>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -41,7 +44,7 @@
             <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
                 
             </TextBox>
-            <Button x:Name="BrowseButton" Content="Browse→" Command="{Binding LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+            <Button x:Name="BrowseButton" Content="Browse→"  Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
             <CheckBox IsChecked="{Binding SelectedBrowser.urlValidity,Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center" IsEnabled="False">
                 <Label FontSize="8" FontFamily="Segoe UI Light" HorizontalAlignment="Left">Valid</Label>
             </CheckBox>
@@ -73,11 +76,13 @@
             </StatusBar.ItemsPanel>
             <StatusBarItem Grid.Column="0">
                 <TextBlock Text="{Binding HoverLink, ElementName=HoverLinkBehaviour}" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                
             </StatusBarItem>
             <Separator Grid.Column="1" />
             <StatusBarItem Grid.Column="2">
                 <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Column="3" VerticalAlignment="Center">
                 Chromium: <Run Text="{Binding Source={x:Static cef:Cef.ChromiumVersion}, Mode=OneTime}" />, CEF: <Run Text="{Binding Source={x:Static cef:Cef.CefVersion}, Mode=OneTime}" />, CefSharp: <Run Text="{Binding Source={x:Static cef:Cef.CefSharpVersion}, Mode=OneTime}"/>
+                <Run x:Name="executionText" Text=""/>
                 </TextBlock>
             </StatusBarItem>
         </StatusBar>
