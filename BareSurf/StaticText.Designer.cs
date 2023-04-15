@@ -115,6 +115,24 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://duckduckgo.com/.
+        /// </summary>
+        public static string HomePage {
+            get {
+                return ResourceManager.GetString("HomePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsLbl {
+            get {
+                return ResourceManager.GetString("SettingsLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Status Bar.
         /// </summary>
         public static string ShowStatusBarLbl {

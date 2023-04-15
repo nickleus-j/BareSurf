@@ -135,6 +135,12 @@
   <data name="ForwardLbl" xml:space="preserve">
     <value>Forward</value>
   </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>https://duckduckgo.com/</value>
+  </data>
+  <data name="SettingsLbl" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="ShowStatusBarLbl" xml:space="preserve">
     <value>Show Status Bar</value>
   </data>

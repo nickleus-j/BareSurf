@@ -34,7 +34,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Menu>
-                    <MenuItem Header="Settings" Click="ToggleStatusBar">
+                    <MenuItem Header="{x:Static local:StaticText.SettingsLbl}" Click="ToggleStatusBar">
                         <Label Content="{x:Static local:StaticText.ShowStatusBarLbl}"/>
                     </MenuItem>
                 </Menu>
