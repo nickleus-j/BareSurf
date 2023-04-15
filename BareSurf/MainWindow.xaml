@@ -4,6 +4,7 @@
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:BareSurf"
         Title="{Binding Path=Title, ElementName=Browser}"
         FocusManager.FocusedElement="{Binding ElementName=Browser}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
     <!--<Window.CommandBindings>
@@ -34,17 +35,20 @@
             <StackPanel Orientation="Horizontal">
                 <Menu>
                     <MenuItem Header="Settings" Click="ToggleStatusBar">
-                        <Label Content="Show Status Bar"/>
+                        <Label Content="{x:Static local:StaticText.ShowStatusBarLbl}"/>
                     </MenuItem>
                 </Menu>
-                <Button Content="Back" Command="{Binding WebBrowser.BackCommand, ElementName=Browser}" Width="50" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="#FF707070" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Button Content="{x:Static local:StaticText.BackLbl}"
+                        Command="{Binding WebBrowser.BackCommand, ElementName=Browser}" Width="50" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="#FF707070" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             </StackPanel>
-            
-            <Button Content="Forward" Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+
+            <Button Content="{x:Static local:StaticText.ForwardLbl}" 
+                    Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
                 
             </TextBox>
-            <Button x:Name="BrowseButton" Content="Browse→"  Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+            <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" 
+                    Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
             <CheckBox IsChecked="{Binding SelectedBrowser.urlValidity,Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center" IsEnabled="False">
                 <Label FontSize="8" FontFamily="Segoe UI Light" HorizontalAlignment="Left">Valid</Label>
             </CheckBox>

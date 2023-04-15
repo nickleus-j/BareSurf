@@ -36,20 +36,20 @@ namespace BareSurf.Commands
 
         public void BrowseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            statusText.Text = "Executed";
+            statusText.Text = StaticText.Executed;
         }
 
         public void BrowseCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
-            statusText.Text = "Can be done";
+            statusText.Text = StaticText.CanBeDoneLbl;
         }
 
         public void BrowsePageExecute()
         {
             if (!IsValidUrl(Model.SelectedBrowser.WebAddress))
             {
-                Model.SelectedBrowser.WebAddress = "https://duckduckgo.com/?q=" + HttpUtility.UrlEncode(Model.SelectedBrowser.WebAddress);
+                Model.SelectedBrowser.WebAddress = String.Concat(StaticText.DefaultSearchPage, HttpUtility.UrlEncode(Model.SelectedBrowser.WebAddress));
             }
             Browser.Load(Model.SelectedBrowser.WebAddress);
         }
