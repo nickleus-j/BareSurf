@@ -22,10 +22,10 @@
         </DockPanel>
 
         <TabControl Grid.Row="1" x:Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
-            <TabItem Header="Browse">
+            <!--<TabItem Header="Browse">
                 <local:BrowseItem></local:BrowseItem>
                 
-            </TabItem>
+            </TabItem>-->
         </TabControl>
     </Grid>
 </Window>

@@ -34,6 +34,7 @@ namespace BareSurf
 
             InitializeComponent();
             bCmd = new BrowserCommands(Model, Browser, executionText);
+            BrowserComponent = Browser;
         }
         public void Load()
         {

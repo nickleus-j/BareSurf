@@ -28,6 +28,7 @@ namespace BareSurf
         public MainWindow()
         {
             InitializeComponent();
+            AddTab(StaticText.HomePage);
         }
 
 
@@ -52,10 +53,10 @@ namespace BareSurf
             };
 
             BrowseItem browser = new BrowseItem();
-
             tab.Content = browser;
             tabControl.Items.Add(tab);
             tabControl.SelectedItem = tab;
+            browser.BrowserComponent.TitleChanged += Browser_TitleChanged;
             browser.Load();
         }
 
@@ -65,6 +66,11 @@ namespace BareSurf
             var browser = tabItem?.Content as BrowseItem;
             browser?.Load();
             browser?.Focus();
+        }
+        private void Browser_TitleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var tabItem = tabControl.SelectedItem as TabItem;
+            tabItem.Header = e.NewValue;
         }
     }
 
