@@ -138,10 +138,19 @@
   <data name="HomePage" xml:space="preserve">
     <value>https://duckduckgo.com/</value>
   </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="NewTabLbl" xml:space="preserve">
+    <value>New Tab</value>
+  </data>
   <data name="SettingsLbl" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="ShowStatusBarLbl" xml:space="preserve">
-    <value>Show Status Bar</value>
+    <value>Show/Hide Status Bar</value>
+  </data>
+  <data name="Valid" xml:space="preserve">
+    <value>Valid</value>
   </data>
 </root>

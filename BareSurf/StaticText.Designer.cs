@@ -124,6 +124,24 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Valid.
+        /// </summary>
+        public static string Invalid {
+            get {
+                return ResourceManager.GetString("Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Tab.
+        /// </summary>
+        public static string NewTabLbl {
+            get {
+                return ResourceManager.GetString("NewTabLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string SettingsLbl {
@@ -133,11 +151,20 @@ namespace BareSurf {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Status Bar.
+        ///   Looks up a localized string similar to Show/Hide Status Bar.
         /// </summary>
         public static string ShowStatusBarLbl {
             get {
                 return ResourceManager.GetString("ShowStatusBarLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid.
+        /// </summary>
+        public static string Valid {
+            get {
+                return ResourceManager.GetString("Valid", resourceCulture);
             }
         }
     }
