@@ -142,6 +142,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close Tab.
+        /// </summary>
+        public static string RemoveTabLbl {
+            get {
+                return ResourceManager.GetString("RemoveTabLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string SettingsLbl {

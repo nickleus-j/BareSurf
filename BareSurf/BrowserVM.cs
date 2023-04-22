@@ -23,4 +23,9 @@ namespace BareSurf.Browser
             }
         }
     }
+    public class BrowserTabVM
+    {
+        public string Title { get; set; }
+        public string Url { get; set; }
+    }
 }

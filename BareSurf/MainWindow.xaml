@@ -5,7 +5,7 @@
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:BareSurf"
-        Title="{Binding Path=Title, ElementName=Browser}"
+        Title="BareSurf"
         FocusManager.FocusedElement="{Binding ElementName=Browser}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
     <!--<Window.CommandBindings>
         <CommandBinding Command="BrowsePage" Executed="BrowseCommand_Executed" CanExecute="BrowseCommand_CanExecute" />
@@ -13,82 +13,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid>
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="2,5" />
-                </Style>
-                <Style TargetType="{x:Type TextBox}">
-                    <Setter Property="Margin" Value="2,5" />
-                </Style>
-            </Grid.Resources>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Horizontal">
-                <Menu>
-                    <MenuItem Header="{x:Static local:StaticText.SettingsLbl}" Click="ToggleStatusBar">
-                        <Label Content="{x:Static local:StaticText.ShowStatusBarLbl}"/>
-                    </MenuItem>
-                </Menu>
-                <Button Content="{x:Static local:StaticText.BackLbl}"
-                        Command="{Binding WebBrowser.BackCommand, ElementName=Browser}" Width="50" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="#FF707070" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            </StackPanel>
 
-            <Button Content="{x:Static local:StaticText.ForwardLbl}" 
-                    Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
-                
-            </TextBox>
-            <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" 
-                    Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <CheckBox IsChecked="{Binding SelectedBrowser.urlValidity,Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center" IsEnabled="False">
-                <Label FontSize="8" FontFamily="Segoe UI Light" HorizontalAlignment="Left">Valid</Label>
-            </CheckBox>
-        </Grid>
-        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1">
-            <wpf:ChromiumWebBrowser x:Name="Browser"
-                                    Address="{Binding SelectedBrowser.WebAddress,Mode=OneWay}">
+        <DockPanel Grid.Row="0">
+            <Button x:Name="btnNewTab" Content="{x:Static local:StaticText.NewTabLbl}" Click="btnNewTab_Click" Margin="3,1,10,3" Background="#FF10F33D" BorderBrush="#FF118613" />
+            <Button x:Name="btnCloseTab" Content="{x:Static local:StaticText.RemoveTabLbl}" Click="btnCloseTab_Click" Margin="20,2,10,2" BorderBrush="#FFF59218" Background="#FFF39E75" />
+        </DockPanel>
 
-            </wpf:ChromiumWebBrowser>
-        </Border>
-        <ProgressBar IsIndeterminate="{Binding IsLoading, ElementName=Browser}"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Top"
-                     Width="Auto"
-                     Grid.Row="1"
-                     Height="2"
-            />
-        <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" x:Name="BottomStatusBar">
-            <StatusBar.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-            </StatusBar.ItemsPanel>
-            <StatusBarItem Grid.Column="0">
-                <TextBlock Text="{Binding HoverLink, ElementName=HoverLinkBehaviour}" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <TabControl Grid.Row="1" x:Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Header="Browse">
+                <local:BrowseItem></local:BrowseItem>
                 
-            </StatusBarItem>
-            <Separator Grid.Column="1" />
-            <StatusBarItem Grid.Column="2">
-                <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Column="3" VerticalAlignment="Center">
-                Chromium: <Run Text="{Binding Source={x:Static cef:Cef.ChromiumVersion}, Mode=OneTime}" />, CEF: <Run Text="{Binding Source={x:Static cef:Cef.CefVersion}, Mode=OneTime}" />, CefSharp: <Run Text="{Binding Source={x:Static cef:Cef.CefSharpVersion}, Mode=OneTime}"/>
-                <Run x:Name="executionText" Text=""/>
-                </TextBlock>
-            </StatusBarItem>
-        </StatusBar>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

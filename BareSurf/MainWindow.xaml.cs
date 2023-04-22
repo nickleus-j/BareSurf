@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BareSurf.Browser;
 using BareSurf.Commands;
+using CefSharp;
+using CefSharp.Wpf;
 
 namespace BareSurf
 {
@@ -22,37 +25,48 @@ namespace BareSurf
     /// </summary>
     public partial class MainWindow : Window
     {
-        protected MainVM Model { get; set; }
-        public BrowserCommands bCmd { get; set; }
         public MainWindow()
         {
-            Model = new MainVM();
-            Model.SelectedBrowser.WebAddress = "https://www.duckduckgo.com/";
-            this.DataContext = Model;
-            
             InitializeComponent();
-            bCmd = new BrowserCommands(Model, Browser, executionText);
         }
 
-        void LoadPageExecute(object target, ExecutedRoutedEventArgs e)
+
+        private void btnNewTab_Click(object sender, RoutedEventArgs e)
         {
-            bCmd.BrowsePageExecute();
-        }
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        {
-            if (e.Key != System.Windows.Input.Key.Enter && e.Key != System.Windows.Input.Key.Return && e.Key != System.Windows.Input.Key.BrowserRefresh) return;
-            Model.SelectedBrowser.WebAddress = txtBoxAddress.Text;
-            bCmd.BrowsePageExecute();
-        }
-        private void WebAddress_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            OnKeyDownHandler(sender, e);
+            AddTab(StaticText.HomePage);
         }
 
-        private void ToggleStatusBar(object sender, RoutedEventArgs e)
+        private void btnCloseTab_Click(object sender, RoutedEventArgs e)
         {
-            Model.ShowBottomStatusBar = !Model.ShowBottomStatusBar;
-            BottomStatusBar.Visibility = Model.ShowBottomStatusBar ? Visibility.Visible : Visibility.Collapsed;
+            if (tabControl.Items.Count > 1)
+            {
+                tabControl.Items.Remove(tabControl.SelectedItem);
+            }
+        }
+
+        private void AddTab(string url)
+        {
+            var tab = new TabItem
+            {
+                Header = StaticText.BrowseLbl
+            };
+
+            BrowseItem browser = new BrowseItem();
+
+            tab.Content = browser;
+            tabControl.Items.Add(tab);
+            tabControl.SelectedItem = tab;
+            browser.Load();
+        }
+
+        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var tabItem = tabControl.SelectedItem as TabItem;
+            var browser = tabItem?.Content as BrowseItem;
+            browser?.Load();
+            browser?.Focus();
         }
     }
+
+    
 }

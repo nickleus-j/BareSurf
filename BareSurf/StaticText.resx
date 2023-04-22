@@ -144,6 +144,9 @@
   <data name="NewTabLbl" xml:space="preserve">
     <value>New Tab</value>
   </data>
+  <data name="RemoveTabLbl" xml:space="preserve">
+    <value>Close Tab</value>
+  </data>
   <data name="SettingsLbl" xml:space="preserve">
     <value>Settings</value>
   </data>

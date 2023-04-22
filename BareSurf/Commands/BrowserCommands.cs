@@ -26,8 +26,8 @@ namespace BareSurf.Commands
     {
         public Run statusText { get; set; }
         public ChromiumWebBrowser Browser { get; set; }
-        MainVM Model { get; set; }
-        public BrowserCommands(MainVM model, ChromiumWebBrowser _Browser, Run _statusText)
+        BrowserVM Model { get; set; }
+        public BrowserCommands(BrowserVM model, ChromiumWebBrowser _Browser, Run _statusText)
         {
             Model= model;
             Browser= _Browser;
@@ -47,11 +47,11 @@ namespace BareSurf.Commands
 
         public void BrowsePageExecute()
         {
-            if (!IsValidUrl(Model.SelectedBrowser.WebAddress))
+            if (!IsValidUrl(Model.WebAddress))
             {
-                Model.SelectedBrowser.WebAddress = String.Concat(StaticText.DefaultSearchPage, HttpUtility.UrlEncode(Model.SelectedBrowser.WebAddress));
+                Model.WebAddress = String.Concat(StaticText.DefaultSearchPage, HttpUtility.UrlEncode(Model.WebAddress));
             }
-            Browser.Load(Model.SelectedBrowser.WebAddress);
+            Browser.Load(Model.WebAddress);
         }
         public bool IsValidUrl(string url)
         {
