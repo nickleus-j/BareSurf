@@ -69,59 +69,17 @@ namespace BareSurf
             var tabItem = tabControl.SelectedItem as TabItem;
             var browser = tabItem?.Content as BrowseItem;
             browser?.Focus();
+            Title = tabItem?.Header.ToString();
         }
         private void Browser_TitleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             var tabItem = tabControl.SelectedItem as TabItem;
             if(tabItem != null)
-            tabItem.Header = e.NewValue;
-        }
-    }
-
-    public class DefaultLifeSpanHandler : ILifeSpanHandler
-    {
-        public event Action<string> PopupRequest;
-
-        public bool OnBeforePopup(IWebBrowser browser, string sourceUrl, string targetUrl, ref int x, ref int y, ref int width,
-            ref int height)
-        {
-            if (PopupRequest != null)
-                PopupRequest(targetUrl);
-
-            return true;
-        }
-
-        public void OnBeforeClose(IWebBrowser browser)
-        {
-
-        }
-
-        public bool OnBeforePopup(IWebBrowser chromiumWebBrowser, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
-        {
-            if (PopupRequest != null)
-                PopupRequest(targetUrl);
-            System.Diagnostics.Process.Start(new ProcessStartInfo
             {
-                FileName = targetUrl,
-                UseShellExecute = true
-            });
-            newBrowser = null;
-            return true;
-        }
-        public void OnAfterCreated(IWebBrowser chromiumWebBrowser, IBrowser browser)
-        {
-            //throw new NotImplementedException();
-        }
-
-        public bool DoClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
-        {
-            //throw new NotImplementedException();
-            return true;
-        }
-
-        public void OnBeforeClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
-        {
-            //throw new NotImplementedException();
+                tabItem.Header = e.NewValue;
+                Title = tabItem.Header.ToString();
+            }
         }
     }
+
 }
