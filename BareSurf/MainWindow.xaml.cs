@@ -42,7 +42,14 @@ namespace BareSurf
         {
             if (tabControl.Items.Count > 1)
             {
-                tabControl.Items.Remove(tabControl.SelectedItem);
+                var toRemove = tabControl.SelectedItem;
+                int selectedIndexAdjustment =  tabControl.SelectedIndex-1;
+                tabControl.SelectedIndex = selectedIndexAdjustment;
+                tabControl.Items.Remove(toRemove);
+            }
+            else
+            {
+                this.Close();
             }
             btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
         }
@@ -77,7 +84,7 @@ namespace BareSurf
             if(tabItem != null)
             {
                 tabItem.Header = e.NewValue;
-                Title = tabItem.Header.ToString();
+                Title = tabItem.Header?.ToString();
             }
         }
     }

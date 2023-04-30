@@ -132,6 +132,9 @@
   <data name="Executed" xml:space="preserve">
     <value>Executed</value>
   </data>
+  <data name="FailedToLoad" xml:space="preserve">
+    <value>Failed To Load Site</value>
+  </data>
   <data name="ForwardLbl" xml:space="preserve">
     <value>Forward</value>
   </data>

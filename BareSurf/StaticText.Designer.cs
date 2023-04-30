@@ -106,6 +106,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed To Load Site.
+        /// </summary>
+        public static string FailedToLoad {
+            get {
+                return ResourceManager.GetString("FailedToLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forward.
         /// </summary>
         public static string ForwardLbl {

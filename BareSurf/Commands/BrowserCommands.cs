@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BareSurf.Browser;
+using CefSharp;
 using CefSharp.Wpf;
 
 namespace BareSurf.Commands
@@ -44,14 +45,27 @@ namespace BareSurf.Commands
             e.CanExecute = true;
             statusText.Text = StaticText.CanBeDoneLbl;
         }
+        private void ErrorPop()
+        {
+            string html = String.Concat("<h1>",StaticText.FailedToLoad,"</h1>");
+            string js = "<script>" + "alert(':(')" + "</script>";
 
+            string fullHtml = String.Concat(html,js);
+            Browser.LoadHtml(fullHtml);
+        }
         public void BrowsePageExecute()
         {
             if (!IsValidUrl(Model.WebAddress))
             {
                 Model.WebAddress = String.Concat(StaticText.DefaultSearchPage, HttpUtility.UrlEncode(Model.WebAddress));
             }
-            Browser.Load(Model.WebAddress);
+            try
+            {
+                Browser.Load(Model.WebAddress);
+            }
+            catch {
+                ErrorPop();
+            }
         }
         public bool IsValidUrl(string url)
         {
