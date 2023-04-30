@@ -7,6 +7,8 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>webSurf.ico</ApplicationIcon>
     <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
+    <RepositoryUrl>https://github.com/nickleus-j/BareSurf</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CefSharp.Wpf.NETCore" Version="110.0.300" />
+    <PackageReference Include="CefSharp.Wpf.NETCore" Version="112.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,15 +35,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="chromiumembeddedframework.runtime.win-arm64" Version="110.0.30" />
+    <PackageReference Update="chromiumembeddedframework.runtime.win-arm64" Version="112.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="chromiumembeddedframework.runtime.win-x64" Version="110.0.30" />
+    <PackageReference Update="chromiumembeddedframework.runtime.win-x64" Version="112.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="chromiumembeddedframework.runtime.win-x86" Version="110.0.30" />
+    <PackageReference Update="chromiumembeddedframework.runtime.win-x86" Version="112.3.0" />
   </ItemGroup>
 
 </Project>

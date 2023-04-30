@@ -169,6 +169,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KeyBoard Shortcuts.
+        /// </summary>
+        public static string ShortcutsLbl {
+            get {
+                return ResourceManager.GetString("ShortcutsLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show/Hide Status Bar.
         /// </summary>
         public static string ShowStatusBarLbl {

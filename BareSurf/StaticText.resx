@@ -153,6 +153,9 @@
   <data name="SettingsLbl" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="ShortcutsLbl" xml:space="preserve">
+    <value>KeyBoard Shortcuts</value>
+  </data>
   <data name="ShowStatusBarLbl" xml:space="preserve">
     <value>Show/Hide Status Bar</value>
   </data>
