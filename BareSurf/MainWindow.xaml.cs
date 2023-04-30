@@ -43,7 +43,7 @@ namespace BareSurf
             if (tabControl.Items.Count > 1)
             {
                 var toRemove = tabControl.SelectedItem;
-                int selectedIndexAdjustment =  tabControl.SelectedIndex-1;
+                int selectedIndexAdjustment = tabControl.SelectedIndex==0?1:  tabControl.SelectedIndex-1;
                 tabControl.SelectedIndex = selectedIndexAdjustment;
                 tabControl.Items.Remove(toRemove);
             }

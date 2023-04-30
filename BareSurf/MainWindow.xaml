@@ -21,8 +21,9 @@
             <Button x:Name="btnCloseTab" Content="{x:Static local:StaticText.RemoveTabLbl}" Click="btnCloseTab_Click" Margin="20,2,10,2" BorderBrush="#FFF59218" Background="#FFF39E75" />
         </DockPanel>
         <DockPanel Grid.Row="1">
-            <StackPanel DockPanel.Dock="Left" MaxWidth="200" Visibility="Collapsed">
-                <Label Content="{x:Static local:StaticText.ShortcutsLbl}"></Label>
+            <StackPanel DockPanel.Dock="Left" MaxWidth="200" Opacity="0.75" Visibility="Collapsed">
+                <Label Content="{x:Static local:StaticText.ShortcutsLbl}" FontFamily="Segoe UI Semibold"></Label>
+                <Label Content="ctrl + n" FontFamily="Segoe UI Light" FontSize="10" Background="#FF9EDAA7"></Label>
             </StackPanel>
             <TabControl DockPanel.Dock="Right" x:Name="tabControl"
                         SelectionChanged="tabControl_SelectionChanged">
