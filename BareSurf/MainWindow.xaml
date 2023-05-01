@@ -17,15 +17,17 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0">
-            <Button x:Name="btnNewTab" Content="{x:Static local:StaticText.NewTabLbl}" Click="btnNewTab_Click" Margin="3,1,10,3" Background="#FF10F33D" BorderBrush="#FF118613" />
-            <Button x:Name="btnCloseTab" Content="{x:Static local:StaticText.RemoveTabLbl}" Click="btnCloseTab_Click" Margin="20,2,10,2" BorderBrush="#FFF59218" Background="#FFF39E75" />
+            <Button x:Name="btnNewTab" FontFamily="Segoe UI Semibold"
+                    Content="{x:Static local:StaticText.NewTabLbl}" Click="btnNewTab_Click" Margin="3,1,10,3" Background="#FF10F33D" BorderBrush="#FF118613" />
+            <Button x:Name="btnCloseTab" FontFamily="Segoe UI Semibold"
+                    Content="{x:Static local:StaticText.RemoveTabLbl}" Click="btnCloseTab_Click" Margin="20,2,10,2" BorderBrush="#FFF59218" Background="#FFF39E75" />
         </DockPanel>
         <DockPanel Grid.Row="1">
             <StackPanel DockPanel.Dock="Left" MaxWidth="200" Opacity="0.75" Visibility="Collapsed">
                 <Label Content="{x:Static local:StaticText.ShortcutsLbl}" FontFamily="Segoe UI Semibold"></Label>
                 <Label Content="ctrl + n" FontFamily="Segoe UI Light" FontSize="10" Background="#FF9EDAA7"></Label>
             </StackPanel>
-            <TabControl DockPanel.Dock="Right" x:Name="tabControl"
+            <TabControl DockPanel.Dock="Right" x:Name="tabControl" FontFamily="Segoe UI Semilight"
                         SelectionChanged="tabControl_SelectionChanged">
             </TabControl>
         </DockPanel>

@@ -127,7 +127,7 @@
     <value>Can be done</value>
   </data>
   <data name="DefaultSearchPage" xml:space="preserve">
-    <value>https://duckduckgo.com/?q=</value>
+    <value>https://swisscows.com/en/web?query=</value>
   </data>
   <data name="Executed" xml:space="preserve">
     <value>Executed</value>
@@ -139,7 +139,7 @@
     <value>Forward</value>
   </data>
   <data name="HomePage" xml:space="preserve">
-    <value>https://duckduckgo.com/</value>
+    <value>https://swisscows.com</value>
   </data>
   <data name="Invalid" xml:space="preserve">
     <value>Valid</value>
