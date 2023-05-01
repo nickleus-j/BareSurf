@@ -88,7 +88,7 @@ namespace BareSurf {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://swisscows.com/en/web?query=.
+        ///   Looks up a localized string similar to https://duckduckgo.com/?q=.
         /// </summary>
         public static string DefaultSearchPage {
             get {
@@ -124,7 +124,7 @@ namespace BareSurf {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://swisscows.com.
+        ///   Looks up a localized string similar to https://duckduckgo.com.
         /// </summary>
         public static string HomePage {
             get {

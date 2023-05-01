@@ -9,7 +9,7 @@
   <Identity
     Name="58100GmeApps.35895EF578345"
     Publisher="CN=C1D327D5-0D67-41D6-A942-CEFABBD8B983"
-    Version="1.0.11.0" />
+    Version="1.0.12.0" />
 
   <Properties>
     <DisplayName>BareSurf</DisplayName>

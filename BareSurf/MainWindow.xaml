@@ -5,11 +5,13 @@
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:BareSurf"
+        xmlns:cmd="clr-namespace:BareSurf.Commands"
         Title="BareSurf"
         FocusManager.FocusedElement="{Binding ElementName=Browser}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
     <!--<Window.CommandBindings>
         <CommandBinding Command="BrowsePage" Executed="BrowseCommand_Executed" CanExecute="BrowseCommand_CanExecute" />
     </Window.CommandBindings>-->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
