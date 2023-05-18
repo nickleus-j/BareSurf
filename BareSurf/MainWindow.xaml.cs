@@ -66,7 +66,7 @@ namespace BareSurf
             tabControl.Items.Add(tab);
             tabControl.SelectedItem = tab;
             browser.BrowserComponent.TitleChanged += Browser_TitleChanged;
-            browser.Load();
+            browser.UseStartPage();
             btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
             browser.BrowserComponent.LifeSpanHandler = new DefaultLifeSpanHandler();
         }

@@ -67,6 +67,10 @@ namespace BareSurf.Commands
                 ErrorPop();
             }
         }
+        public void UseStartPage()
+        {
+            Browser.LoadHtml(StaticText.StartHtmlContent);
+        }
         public bool IsValidUrl(string url)
         {
             return !string.IsNullOrEmpty(url) && Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute) && url.IndexOf(".")>0 && url[url.Length-1]!='.';

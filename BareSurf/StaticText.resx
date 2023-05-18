@@ -159,6 +159,9 @@
   <data name="ShowStatusBarLbl" xml:space="preserve">
     <value>Show/Hide Status Bar</value>
   </data>
+  <data name="StartHtmlContent" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;style&gt;body,dl{background: #000; color:#fff;}h1{color: #fff; font: 38px 'Segoe UI', 'Century Gothic', Arial, sans-serif; text-align: center;}p{text-align: center;}span{padding: 1px; font: 16px 'Segoe UI', 'Century Gothic', Arial, sans-serif; border: 1px solid #efeefa;}dl{margin: 0 20%; padding: 0; font: 36px 'Segoe UI', 'Century Gothic', Arial, sans-serif; text-align: left; list-style: none; white-space: nowrap;}dl dt{padding: 0 5x;}dd{font-size:70%; font-family: 'Segoe UI semilight', 'Century Gothic', Arial, sans-serif; display: inline-block;}dl a,dl a:visited{color:#fefafd; text-decoration:none;}dl a:hover{color:#9b9afa; text-decoration:underline;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Welcome Web Surfer &lt;/h1&gt;&lt;div&gt;&lt;p&gt;&lt;span&gt; Click the links to other sites below or enter a URL on the address bar.&lt;/span&gt;&lt;/p&gt;&lt;dL&gt;&lt;dt&gt;Search&lt;/dt&gt;&lt;dd&gt; &lt;a href="https://duckduckgo.com"&gt; DuckDuckgo &lt;/a&gt;&lt;/dd&gt;&lt;dd&gt; &lt;a href="https://swisscows.com"&gt; Swisscows &lt;/a&gt;&lt;/dd&gt;&lt;dt&gt;Music&lt;/dt&gt;&lt;dd&gt;&lt;a href="https://open.spotify.com"&gt; Spotify &lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href="https://music.youtube.com/"&gt; YouTube Music &lt;/a&gt;&lt;/dd&gt;&lt;dt&gt;Video&lt;/dt&gt;&lt;dd&gt; &lt;a href="https://youtube.com"&gt; YouTube &lt;/a&gt;&lt;/dd&gt;&lt;dd&gt; &lt;a href="https://www.veoh.com/"&gt; Veoh &lt;/a&gt;&lt;/dd&gt;&lt;/dL&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
   <data name="Valid" xml:space="preserve">
     <value>Valid</value>
   </data>

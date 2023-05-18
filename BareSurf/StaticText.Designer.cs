@@ -187,6 +187,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;style&gt;body,dl{background: #000; color:#fff;}h1{color: #fff; font: 38px &apos;Segoe UI&apos;, &apos;Century Gothic&apos;, Arial, sans-serif; text-align: center;}p{text-align: center;}span{padding: 1px; font: 16px &apos;Segoe UI&apos;, &apos;Century Gothic&apos;, Arial, sans-serif; border: 1px solid #efeefa;}dl{margin: 0 20%; padding: 0; font: 36px &apos;Segoe UI&apos;, &apos;Century Gothic&apos;, Arial, sans-serif; text-align: left; list-style: none; white-space: nowrap;}dl dt{padding: 0 5x;}dd{font-size:70%; font-family: &apos;Segoe UI semilig [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string StartHtmlContent {
+            get {
+                return ResourceManager.GetString("StartHtmlContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid.
         /// </summary>
         public static string Valid {

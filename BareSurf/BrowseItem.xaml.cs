@@ -40,6 +40,10 @@ namespace BareSurf
         {
             bCmd.BrowsePageExecute();
         }
+        public void UseStartPage()
+        {
+            bCmd.UseStartPage();
+        }
         void LoadPageExecute(object target, ExecutedRoutedEventArgs e)
         {
             
