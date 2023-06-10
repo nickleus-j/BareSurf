@@ -43,6 +43,8 @@ namespace BareSurf
         public void UseStartPage()
         {
             bCmd.UseStartPage();
+            Model.WebAddress=String.Empty;
+            txtBoxAddress.Text=String.Empty;
         }
         void LoadPageExecute(object target, ExecutedRoutedEventArgs e)
         {
