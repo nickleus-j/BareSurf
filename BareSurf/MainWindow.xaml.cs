@@ -14,10 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BareSurf.Browser;
-using BareSurf.Commands;
-using CefSharp;
-using CefSharp.Wpf;
 
 namespace BareSurf
 {
@@ -30,9 +26,6 @@ namespace BareSurf
         {
             InitializeComponent();
         }
-
-
-
     }
 
 }
