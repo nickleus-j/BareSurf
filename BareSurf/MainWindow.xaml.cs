@@ -29,64 +29,10 @@ namespace BareSurf
         public MainWindow()
         {
             InitializeComponent();
-            AddTab(StaticText.HomePage);
         }
 
 
-        private void btnNewTab_Click(object sender, RoutedEventArgs e)
-        {
-            AddTab(StaticText.HomePage);
-        }
 
-        private void btnCloseTab_Click(object sender, RoutedEventArgs e)
-        {
-            if (tabControl.Items.Count > 1)
-            {
-                var toRemove = tabControl.SelectedItem;
-                int selectedIndexAdjustment = tabControl.SelectedIndex==0?1:  tabControl.SelectedIndex-1;
-                tabControl.SelectedIndex = selectedIndexAdjustment;
-                tabControl.Items.Remove(toRemove);
-            }
-            else
-            {
-                this.Close();
-            }
-            btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
-        }
-
-        public void AddTab(string url)
-        {
-            var tab = new TabItem
-            {
-                Header = StaticText.BrowseLbl
-            };
-
-            BrowseItem browser = new BrowseItem();
-            tab.Content = browser;
-            tabControl.Items.Add(tab);
-            tabControl.SelectedItem = tab;
-            browser.BrowserComponent.TitleChanged += Browser_TitleChanged;
-            browser.Load();
-            btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
-            browser.BrowserComponent.LifeSpanHandler = new DefaultLifeSpanHandler();
-        }
-
-        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var tabItem = tabControl.SelectedItem as TabItem;
-            var browser = tabItem?.Content as BrowseItem;
-            browser?.Focus();
-            Title = tabItem?.Header.ToString();
-        }
-        private void Browser_TitleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            var tabItem = tabControl.SelectedItem as TabItem;
-            if(tabItem != null)
-            {
-                tabItem.Header = e.NewValue;
-                Title = tabItem.Header?.ToString();
-            }
-        }
     }
 
 }
