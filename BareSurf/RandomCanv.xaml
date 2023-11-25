@@ -17,6 +17,7 @@
                 <Button Margin="5,0,5,0" Click="Button_Click">Redraw Canvas</Button>
                 <Button Margin="5,0,5,0" x:Name="spiderWebBtn" Click="spiderWebBtn_Click">Draw Spider web</Button>
                 <Button Margin="5,0,5,0" x:Name="MosaicBtn" Click="MosaicBtn_Click">Draw Mosaic</Button>
+                <Button Margin="5,0,5,0" x:Name="LinearBtn" Click="Linear_Click">Draw Rays</Button>
                 <Button Margin="5,0,5,0" x:Name="browseBtn" Click="browseBtn_Click">Surf the Web</Button>
             </StackPanel>
         </Grid>
