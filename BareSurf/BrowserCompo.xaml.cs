@@ -27,11 +27,11 @@ namespace BareSurf
         public BrowserCompo()
         {
             InitializeComponent();
-            AddTab("https://swisscows.com");
+            AddTab("https://duckduckgo.com");
         }
         private void btnNewTab_Click(object sender, RoutedEventArgs e)
         {
-            AddTab("https://swisscows.com");
+            AddTab("https://duckduckgo.com");
         }
 
         private void btnCloseTab_Click(object sender, RoutedEventArgs e)
