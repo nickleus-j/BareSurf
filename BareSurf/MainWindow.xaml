@@ -12,7 +12,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!--<local:BrowserCompo></local:BrowserCompo>-->
-        <local:RandomCanv></local:RandomCanv>
+        <local:BrowserCompo></local:BrowserCompo>
     </Grid>
 </Window>
