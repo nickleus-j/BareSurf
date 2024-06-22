@@ -34,7 +34,7 @@ namespace BareSurf.Commands
             Browser= _Browser;
             statusText= _statusText;
         }
-
+        //https://duckduckgo.com/?q=1&ia=chat
         public void BrowseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             statusText.Text = StaticText.Executed;

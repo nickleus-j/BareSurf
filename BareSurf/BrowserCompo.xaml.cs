@@ -27,7 +27,8 @@ namespace BareSurf
         public BrowserCompo()
         {
             InitializeComponent();
-            AddTab("https://duckduckgo.com");
+            btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
+            //AddTab("https://duckduckgo.com");
         }
         private void btnNewTab_Click(object sender, RoutedEventArgs e)
         {
@@ -79,6 +80,20 @@ namespace BareSurf
             {
                 tabItem.Header = e.NewValue;
             }
+        }
+
+        private void Default_Click(object sender, RoutedEventArgs e)
+        {
+            BrowseItem browser = new BrowseItem();
+            browser.Load("https://duckduckgo.com");
+            StartTab.Content = browser;
+        }
+        private void Chat_Click(object sender, RoutedEventArgs e)
+        {
+            BrowseItem browser = new BrowseItem();
+            browser.Load("https://duckduckgo.com/?q=1&ia=chat");
+            StartTab.Content = browser;
+
         }
     }
 }

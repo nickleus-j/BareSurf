@@ -40,6 +40,12 @@ namespace BareSurf
         {
             bCmd.BrowsePageExecute();
         }
+        public void Load(string url)
+        {
+            Model.WebAddress = url;
+            txtBoxAddress.Text = url;
+            bCmd.BrowsePageExecute();
+        }
         void LoadPageExecute(object target, ExecutedRoutedEventArgs e)
         {
             
