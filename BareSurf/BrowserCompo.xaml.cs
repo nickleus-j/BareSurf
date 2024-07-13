@@ -95,5 +95,18 @@ namespace BareSurf
             StartTab.Content = browser;
 
         }
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter && e.Key != System.Windows.Input.Key.Return && e.Key != System.Windows.Input.Key.BrowserRefresh) return;
+            LoadPageExecute();
+        }
+        void LoadPageExecute(object sender, RoutedEventArgs e)
+        {
+            LoadPageExecute();
+        }
+        void LoadPageExecute()
+        {
+            AddTab(txtBoxAddress.Text);
+        }
     }
 }

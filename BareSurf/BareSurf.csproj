@@ -8,6 +8,9 @@
     <ApplicationIcon>webSurf.ico</ApplicationIcon>
     <RepositoryUrl>https://github.com/nickleus-j/BareSurf</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <Configurations>Debug;Release;x86</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

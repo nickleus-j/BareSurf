@@ -32,6 +32,7 @@
                     SelectionChanged="tabControl_SelectionChanged">
                 <TabItem Header="Start" x:Name="StartTab">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="DefaultStack">
+                        
                         <StackPanel Orientation="Horizontal">
                             <Button Width="160" Height="160" Margin="0,0,20,0" Background="#FF389C3C" Click="Chat_Click">
                                 <Label FontSize="20" FontFamily="Segoe Print" Foreground="#FFFAFAFA">🗯 Bot chat</Label>
@@ -41,7 +42,15 @@
                             </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
+                            <Label FontSize="12">Or Type Address or Search query</Label>
+                            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://swisscows.com/}" 
+                         MinWidth="250"
+                         Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
 
+                            </TextBox>
+                            <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" Click="LoadPageExecute"
+                                FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" 
+                                Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>       
                         </StackPanel>
                     </StackPanel>
                 </TabItem>
