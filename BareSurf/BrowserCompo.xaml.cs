@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -107,6 +108,74 @@ namespace BareSurf
         void LoadPageExecute()
         {
             AddTab(txtBoxAddress.Text);
+        }
+        private void Screensaver_Click(object sender, RoutedEventArgs e)
+        {
+            RunEllipse();
+        }
+        private void RunEllipse()
+        {
+            Canvas cv=new Canvas();
+            StartTab.Content = cv;
+            for (int i = 0; i < 20; i++)
+            {
+                CreateAnimatedEllipse(cv);
+            }
+        }
+        private Random random = new Random();
+        private void CreateAnimatedEllipse(Canvas animationCanvas)
+        {
+            Ellipse ellipse = new Ellipse
+            {
+                Width = random.Next(20, 100),
+                Height = random.Next(20, 100),
+                Fill = new SolidColorBrush(Color.FromArgb(
+            (byte)random.Next(50, 255),
+            (byte)random.Next(0, 255),
+            (byte)random.Next(0, 255),
+            (byte)random.Next(0, 255)))
+            };
+
+            Canvas.SetLeft(ellipse, random.Next(0, (int)this.ActualWidth));
+            Canvas.SetTop(ellipse, random.Next(0, (int)this.ActualHeight));
+            animationCanvas.Children.Add(ellipse);
+
+            AnimateEllipse(ellipse, animationCanvas);
+        }
+
+        private void AnimateEllipse(Ellipse ellipse, Canvas animationCanvas)
+        {
+            double newX = random.Next(0, (int)this.ActualWidth);
+            double newY = random.Next(0, (int)this.ActualHeight);
+
+            DoubleAnimation moveXAnimation = new DoubleAnimation
+            {
+                To = newX,
+                Duration = TimeSpan.FromSeconds(random.Next(3, 10)),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            DoubleAnimation moveYAnimation = new DoubleAnimation
+            {
+                To = newY,
+                Duration = TimeSpan.FromSeconds(random.Next(3, 10)),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            DoubleAnimation opacityAnimation = new DoubleAnimation
+            {
+                From = 0.3,
+                To = 1.0,
+                Duration = TimeSpan.FromSeconds(random.Next(3, 10)),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            ellipse.BeginAnimation(Canvas.LeftProperty, moveXAnimation);
+            ellipse.BeginAnimation(Canvas.TopProperty, moveYAnimation);
+            ellipse.BeginAnimation(OpacityProperty, opacityAnimation);
         }
     }
 }

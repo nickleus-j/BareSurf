@@ -40,6 +40,9 @@
                             <Button Width="160" Height="160" Margin="0,0,20,0" Background="#FF389C3C" Click="Default_Click">
                                 <Label FontSize="16" FontFamily="Segoe Print" Foreground="#FFFAFAFA">🔎Search Engine</Label>
                             </Button>
+                            <Button Width="160" Height="160" Margin="0,0,20,0" Background="#FF389C3C" Click="Screensaver_Click">
+                                <Label FontSize="20" FontFamily="Segoe Print" Foreground="#FFFAFAFA">Screensaver</Label>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label FontSize="12">Or Type Address or Search query</Label>
