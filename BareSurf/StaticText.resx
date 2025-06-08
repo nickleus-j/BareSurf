@@ -120,6 +120,9 @@
   <data name="BackLbl" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="BotChatLbl" xml:space="preserve">
+    <value>🗯 Bot chat</value>
+  </data>
   <data name="BrowseLbl" xml:space="preserve">
     <value>Browse→</value>
   </data>
@@ -145,10 +148,13 @@
     <value>Valid</value>
   </data>
   <data name="NewTabLbl" xml:space="preserve">
-    <value>New Tab</value>
+    <value>+New Tab</value>
   </data>
   <data name="RemoveTabLbl" xml:space="preserve">
     <value>Close Tab</value>
+  </data>
+  <data name="ScreensaverLbl" xml:space="preserve">
+    <value>Screensaver</value>
   </data>
   <data name="SettingsLbl" xml:space="preserve">
     <value>Settings</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="ShowStatusBarLbl" xml:space="preserve">
     <value>Show/Hide Status Bar</value>
+  </data>
+  <data name="srcEngineLbl" xml:space="preserve">
+    <value>🔎Search Engine</value>
   </data>
   <data name="Valid" xml:space="preserve">
     <value>Valid</value>

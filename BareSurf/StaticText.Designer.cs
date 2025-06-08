@@ -70,6 +70,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 🗯 Bot chat.
+        /// </summary>
+        public static string BotChatLbl {
+            get {
+                return ResourceManager.GetString("BotChatLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse→.
         /// </summary>
         public static string BrowseLbl {
@@ -142,7 +151,7 @@ namespace BareSurf {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Tab.
+        ///   Looks up a localized string similar to +New Tab.
         /// </summary>
         public static string NewTabLbl {
             get {
@@ -156,6 +165,15 @@ namespace BareSurf {
         public static string RemoveTabLbl {
             get {
                 return ResourceManager.GetString("RemoveTabLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screensaver.
+        /// </summary>
+        public static string ScreensaverLbl {
+            get {
+                return ResourceManager.GetString("ScreensaverLbl", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace BareSurf {
         public static string ShowStatusBarLbl {
             get {
                 return ResourceManager.GetString("ShowStatusBarLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔎Search Engine.
+        /// </summary>
+        public static string srcEngineLbl {
+            get {
+                return ResourceManager.GetString("srcEngineLbl", resourceCulture);
             }
         }
         
