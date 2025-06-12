@@ -5,7 +5,7 @@
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:BareSurf"
-        Title="BareSurf"
+        Title="Bare Surf"
          Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
 
     <Grid>

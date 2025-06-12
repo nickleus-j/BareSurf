@@ -38,7 +38,7 @@
 
             <Button Content="{x:Static local:StaticText.ForwardLbl}"  FontFamily="Segoe UI Semilight"
                     Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
+            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF10515D" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
 
             </TextBox>
             <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" 
