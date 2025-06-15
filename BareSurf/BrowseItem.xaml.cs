@@ -1,20 +1,8 @@
 ﻿using BareSurf.Browser;
 using BareSurf.Commands;
 using CefSharp.Wpf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BareSurf
 {
@@ -45,10 +33,6 @@ namespace BareSurf
             Model.WebAddress = url;
             txtBoxAddress.Text = url;
             bCmd.BrowsePageExecute();
-        }
-        void LoadPageExecute(object target, ExecutedRoutedEventArgs e)
-        {
-            
         }
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {

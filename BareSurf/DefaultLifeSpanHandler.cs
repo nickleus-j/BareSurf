@@ -29,6 +29,7 @@ namespace BareSurf
             Process.Start(new ProcessStartInfo
             {
                 FileName = targetUrl,
+                WindowStyle = ProcessWindowStyle.Normal,
                 UseShellExecute = true
             });
             newBrowser = null;
@@ -42,7 +43,6 @@ namespace BareSurf
 
         public bool DoClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
         {
-            //throw new NotImplementedException();
             return !browser.IsValid;
         }
 
