@@ -22,9 +22,11 @@ namespace BareSurf
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainVM Model;
         public MainWindow()
         {
             InitializeComponent();
+            Model=new MainVM();
         }
     }
 

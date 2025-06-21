@@ -48,7 +48,7 @@
                             <Label FontSize="12">Or Type Address or Search query</Label>
                             <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://tosdr.org/en}" 
                          MinWidth="250"
-                         Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Consolas" KeyDown="OnKeyDownHandler">
+                         Grid.Column="2" FontSize="14" BorderBrush="#FF5BA5B3" BorderThickness="1" FontFamily="Courier New" KeyDown="OnKeyDownHandler">
 
                             </TextBox>
                             <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" Click="LoadPageExecute"

@@ -8,7 +8,7 @@
         Title="Bare Surf"
          Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
 
-    <Grid>
+    <Grid x:Name="MainPanel">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>

@@ -30,6 +30,11 @@ namespace BareSurf
             InitializeComponent();
             btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
         }
+        public BrowserCompo(string url)
+        {
+            InitializeComponent();
+            AddTab(url);
+        }
         private void btnNewTab_Click(object sender, RoutedEventArgs e)
         {
             AddTab("https://duckduckgo.com");
