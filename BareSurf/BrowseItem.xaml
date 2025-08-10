@@ -32,17 +32,17 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
-                <Button Content="{x:Static local:StaticText.BackLbl}" FontFamily="Segoe UI Semilight"
+                <Button Content="{x:Static local:StaticText.BackLbl}" FontFamily="Bahnschrift SemiLight"
                         Command="{Binding WebBrowser.BackCommand, ElementName=Browser}" Width="50" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="#FF707070" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             </StackPanel>
 
-            <Button Content="{x:Static local:StaticText.ForwardLbl}"  FontFamily="Segoe UI Semilight"
+            <Button Content="{x:Static local:StaticText.ForwardLbl}" FontFamily="Bahnschrift SemiLight"
                     Command="{Binding WebBrowser.ForwardCommand, ElementName=Browser}" Grid.Column="1" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF10515D" BorderThickness="1" FontFamily="Trebuchet MS" KeyDown="OnKeyDownHandler">
+            <TextBox x:Name="txtBoxAddress" Text="{Binding Address, ElementName=Browser, FallbackValue=https://duckduckgo.com/}" Grid.Column="2" FontSize="14" BorderBrush="#FF10515D" BorderThickness="1" FontFamily="Noto Sans SC" KeyDown="OnKeyDownHandler">
 
             </TextBox>
             <Button x:Name="BrowseButton" Content="{x:Static local:StaticText.BrowseLbl}" 
-                    Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Segoe UI Semibold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+                    Command="{Binding Path=LoadPageExecute}" Grid.Column="3" FontFamily="Noto Sans SC SemiBold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
             <CheckBox IsChecked="{Binding SelectedBrowser.urlValidity,Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center" IsEnabled="False">
                 <Label FontSize="8" FontFamily="Cascadia Code" HorizontalAlignment="Left">Valid</Label>
             </CheckBox>
