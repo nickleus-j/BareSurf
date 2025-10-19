@@ -19,7 +19,7 @@ namespace BareSurf
 
         public void OnBeforeClose(IWebBrowser browser)
         {
-
+            browser.Dispose();
         }
 
         public bool OnBeforePopup(IWebBrowser chromiumWebBrowser, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
@@ -37,8 +37,6 @@ namespace BareSurf
         }
         public void OnAfterCreated(IWebBrowser chromiumWebBrowser, IBrowser browser)
         {
-            //throw new NotImplementedException();
-            
         }
 
         public bool DoClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
@@ -48,7 +46,7 @@ namespace BareSurf
 
         public void OnBeforeClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
         {
-            //throw new NotImplementedException();
+            
         }
     }
 }

@@ -121,7 +121,7 @@ namespace BareSurf
         {
             Canvas cv=new Canvas();
             StartTab.Content = cv;
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 25; i++)
             {
                 CreateAnimatedEllipse(cv);
             }
@@ -131,10 +131,10 @@ namespace BareSurf
         {
             Ellipse ellipse = new Ellipse
             {
-                Width = random.Next(20, 100),
-                Height = random.Next(20, 100),
+                Width = random.Next(30, 100),
+                Height = random.Next(30, 100),
                 Fill = new SolidColorBrush(Color.FromArgb(
-            (byte)random.Next(50, 255),
+            (byte)random.Next(150, 255),
             (byte)random.Next(0, 255),
             (byte)random.Next(0, 255),
             (byte)random.Next(0, 255)))
