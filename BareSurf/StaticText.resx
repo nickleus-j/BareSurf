@@ -129,6 +129,9 @@
   <data name="CanBeDoneLbl" xml:space="preserve">
     <value>Can be done</value>
   </data>
+  <data name="ChatUrl" xml:space="preserve">
+    <value>https://duckduckgo.com/?q=1&amp;ia=chat</value>
+  </data>
   <data name="DefaultSearchPage" xml:space="preserve">
     <value>https://duckduckgo.com/?q=</value>
   </data>

@@ -97,6 +97,15 @@ namespace BareSurf {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://duckduckgo.com/?q=1&amp;ia=chat.
+        /// </summary>
+        public static string ChatUrl {
+            get {
+                return ResourceManager.GetString("ChatUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://duckduckgo.com/?q=.
         /// </summary>
         public static string DefaultSearchPage {

@@ -37,7 +37,7 @@ namespace BareSurf
         }
         private void btnNewTab_Click(object sender, RoutedEventArgs e)
         {
-            AddTab("https://duckduckgo.com");
+            AddTab(StaticText.HomePage);
         }
 
         private void btnCloseTab_Click(object sender, RoutedEventArgs e)
@@ -48,9 +48,6 @@ namespace BareSurf
                 int selectedIndexAdjustment = tabControl.SelectedIndex == 0 ? 1 : tabControl.SelectedIndex - 1;
                 tabControl.SelectedIndex = selectedIndexAdjustment;
                 tabControl.Items.Remove(toRemove);
-            }
-            else
-            {
             }
             btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
         }
@@ -90,13 +87,13 @@ namespace BareSurf
         private void Default_Click(object sender, RoutedEventArgs e)
         {
             BrowseItem browser = new BrowseItem();
-            browser.Load("https://duckduckgo.com");
+            browser.Load(StaticText.HomePage);
             StartTab.Content = browser;
         }
         private void Chat_Click(object sender, RoutedEventArgs e)
         {
             BrowseItem browser = new BrowseItem();
-            browser.Load("https://duckduckgo.com/?q=1&ia=chat");
+            browser.Load(StaticText.ChatUrl);
             StartTab.Content = browser;
 
         }
