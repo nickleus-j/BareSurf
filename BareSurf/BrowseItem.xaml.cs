@@ -1,6 +1,7 @@
 ﻿using BareSurf.Browser;
 using BareSurf.Commands;
 using CefSharp.Wpf;
+using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -13,16 +14,14 @@ namespace BareSurf
     {
         BrowserVM Model;
         public BrowserCommands bCmd { get; set; }
-        public ChromiumWebBrowser BrowserComponent { get; }
         public BrowseItem()
         {
             Model = new BrowserVM();
             Model.WebAddress = StaticText.HomePage;
             this.DataContext = Model;
-
             InitializeComponent();
+
             bCmd = new BrowserCommands(Model, Browser, executionText);
-            BrowserComponent = Browser;
         }
         public void Load()
         {

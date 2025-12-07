@@ -17,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BareSurf.Browser;
 using BareSurf.Commands;
+using CefSharp;
+using CefSharp.Wpf;
 
 namespace BareSurf
 {
@@ -63,10 +65,10 @@ namespace BareSurf
             tab.Content = browser;
             tabControl.Items.Add(tab);
             tabControl.SelectedItem = tab;
-            browser.BrowserComponent.TitleChanged += Browser_TitleChanged;
+            browser.Browser.TitleChanged += Browser_TitleChanged;
             browser.Load(url);
             btnCloseTab.IsEnabled = tabControl.Items.Count > 1;
-            browser.BrowserComponent.LifeSpanHandler = new DefaultLifeSpanHandler();
+            browser.Browser.LifeSpanHandler = new DefaultLifeSpanHandler();
         }
 
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

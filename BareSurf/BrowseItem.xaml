@@ -50,7 +50,6 @@
         <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1">
             <wpf:ChromiumWebBrowser x:Name="Browser"
                                     Address="{Binding SelectedBrowser.WebAddress,Mode=OneWay}">
-
             </wpf:ChromiumWebBrowser>
         </Border>
         <ProgressBar IsIndeterminate="{Binding IsLoading, ElementName=Browser}"

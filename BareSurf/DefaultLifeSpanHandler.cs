@@ -20,6 +20,7 @@ namespace BareSurf
         public void OnBeforeClose(IWebBrowser browser)
         {
             browser.Dispose();
+            Cef.Shutdown();
         }
 
         public bool OnBeforePopup(IWebBrowser chromiumWebBrowser, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
